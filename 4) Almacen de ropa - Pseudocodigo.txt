@@ -1,0 +1,66 @@
+# 4. Almacén de venta de ropa
+
+Un almacén de venta de ropa, tiene las siguientes promociones para sus clientes las cuales consisten en lo siguiente:
+Para ventas menores o iguales a 100.000 con pago en efectivo, se hace un descuento del 20%,  con tarjeta de crédito,
+se hace el 10%.
+Para ventas mayores a 100.000 y menores o iguales a 200.0000, con pago en efectivo, se realiza un descuento del  30%;
+con tarjeta de crédito se hace un descuento del 15%.
+Para ventas mayores a 200.000, con pago en efectivo, se hace un descuento del  40%; con tarjeta de crédito, se hace el 20%.
+
+- **Análisis**
+
+Datos de Entrada: valorCompra, metodoPago
+
+Proceso: dependiendo del rango del valor de las prendas compradas y su método de pago,
+ ubicar correctamente en que caso se debe aplicar el descuento correcto
+
+Datos de Salida: valorPagar
+
+- **Pseudocódigo**
+
+*Inicio*
+
+	*//declaro variables*
+	*entero valorCompra, valorPagar, metodoPago;*
+
+	*//Pregunto por consola*
+	*escriba “Digite el valor de la compra de las prendas en bruto: “*
+	*lea valorCompra*
+
+	*escriba” Pagará con tarjeta de credito o efectivo, (1 o 2 Respectivamente)”*
+	*lea metodoPago*
+
+	*//proceso*
+	*si valorCompra < = 100.000 entonces*
+		*si metodoPago == 1 entonces*
+			valorPagar = ((valorCompra * 0.10) - valorCompra) * -1;
+		*sino si metodoPago == 2 entonces*
+			valorPagar = ((valorCompra * 0.20) - valorCompra) * -1;
+	*sino si valorCompra > 100.000 && valorCompra< =200.000*
+		*si metodoPago == 1 entonces*
+			valorPagar = ((valorCompra * 0.15) - valorCompra) * -1;
+		*sino si metodoPago == 2 entonces*
+			valorPagar = ((valorCompra * 0.30) - valorCompra) * -1;
+	*sino si valorCompra > 200.000*
+		*si metodoPago == 1 entonces*
+			valorPagar = ((valorCompra * 0.20) - valorCompra) * -1;
+		*sino si metodoPago == 2 entonces*
+			valorPagar = ((valorCompra * 0.40) - valorCompra) * -1;
+
+	*Finsi * 9* 
+
+	*//Imprimo el resultado*
+	*Escribir “El valor a pagar por las prendas es: “ valorPagar;*
+
+*Fin*
+
+- **Prueba de escritorio**
+
+**Datos de Entrada:**
+
+1. valorCompra = 80000
+2. metodoPago = 1 (efectivo)
+
+**Resultado:**
+
+El valor a pagar por las prendas es: **64,000**
