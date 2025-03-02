@@ -59,7 +59,8 @@ int main() {
     dias = 16; 
 	costo_mes = dias * tarifa; 
     cout << "Agosto: $" << costo_mes << endl;
-    
+
+    dias = 18;
 	costo_mes = dias * tarifa; 
     cout << "Septiembre: $" << costo_mes << endl;
     
@@ -76,7 +77,7 @@ int main() {
     cout << "Diciembre: $" << costo_mes << endl;
     
     //Calculo el total anual
-    total_anual = (12 + 17 + 18 + 16 + 17 + 19 + 16 + 18 + 18 + 16 + 11) * tarifa;
+    total_anual = (12 + 17 + 18 + 16 + 17 + 19 + 16 + 18 + 18 + 16 + 11 + 18) * tarifa;
 
     //Imprimo el resultado del total anual
     cout << "\n Total pagado en el anio: $" << total_anual << endl;
