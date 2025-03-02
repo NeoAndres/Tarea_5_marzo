@@ -1,0 +1,67 @@
+# 5. Empresa de Transportes
+
+En una ciudad compuesta por 6 barrios (cada uno identificado por un número entero: 1 al 6), 
+existe una empresa de transportes que cobra un valor único por el reparto de una carga (30.000 pesos). 
+Los camiones de la empresa pueden transportar 3 pedidos en cada viaje. Se establecen algunos descuentos, 
+según los siguientes criterios:
+
+- Si las tres cargas del camión van al mismo barrio, se aplica el 30% de descuento a cada carga.
+- Si dos cargas van al mismo barrio, se les aplica un 15% de descuento (sólo a esas dos).
+
+Desarrollar el seudocódigo que lea los códigos de los barrios a los que van las tres cargas de un viaje.
+Informar el valor total a pagar por el viaje de las cargas.
+
+- **Análisis**
+
+Datos de Entrada: barrio1, barrio2, barrio3
+
+Proceso: El objetivo es calcular el valor total a pagar por el viaje, teniendo en cuenta los descuentos aplicados.
+
+Datos de Salida: valorPagar
+
+- **Pseudocódigo**
+
+*Inicio*
+
+	*//declaro variables*
+	*entero barrio1, barrio2, barrio3;*
+	entero *valorPagar;*
+
+	*//Pregunto por consola*
+	*escriba “A que barrio se dirige la primera carga (1-6)“*
+	*lea barrio1*
+
+	*escriba “A que barrio se dirige la segunda carga (1-6)“*
+	*lea barrio2*
+
+	*escriba “A que barrio se dirige la tercera carga (1-6)“*
+	*lea barrio3*
+
+	*//proceso*
+	si (barrio1 != barrio2 && barrio2 != barrio3 && barrio3 !=barrio1) Entonces //todos son diferentes
+		valorPagar = 30000*3;
+
+	sino si (barrio1 ==barrio2 && barrio2 == barrio3 ) Entonces //todos los barrios son iguales
+		valorPagar = (30000*3)*0.30;
+
+	sino si (barrio1 ==barrio2 || barrio2 == barrio3 || barrio1 ==barrio3) Entonces //2 barrios iguales
+		valorPagar = ((30000*2)*0.15)+30000;
+
+	Finsi * 3
+
+	*//Imprimo el resultado*
+	*Escribir("El valor a pagar por el delivery de los 3 paquetes es: ", valorPagar;*
+
+*Fin*
+
+- **Prueba de escritorio**
+
+**Datos de Entrada:**
+
+1. barrio1 = 1
+2. barrio2 = 2
+3. barrio3 = 3
+
+**Resultado:**
+
+El valor a pagar por el delivery de los paquetes es: **90000**
