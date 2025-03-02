@@ -1,0 +1,119 @@
+# 2. Consumo de Energía y Agua
+
+Calcular el valor total a pagar por los dos conceptos agua y energía; el cobro se realiza según el siguiente plan de consumos y descuentos por estrato:
+
+| **Agua** |  |
+| --- | --- |
+| **Consumo** | Valor |
+| **1- 2000 m3** | 35.000 |
+| **m3adicional** | 400 |
+
+| **Agua** |  |
+| --- | --- |
+| **Estrato** | Descuento % |
+| **1- 2** | 10 |
+| **3-4** | 5 |
+| **5-6** | No tiene |
+
+| **Energía** |  |
+| --- | --- |
+| **Estrato** | Descuento % |
+| **1- 2** | 15 |
+| **3-4** | 10 |
+| **5-6** | 5 |
+
+| **Energía** |  |
+| --- | --- |
+| Consumo | Valor |
+| **1- 3000 KW** | 30.000 |
+| **KW adicional** | 350 |
+- Análisis
+    
+    *Datos de entrada: consumoAgua, estrato, consumoEnergia;*
+    
+    *Proceso: Usuario digita el consumo del agua, el consumo de energía y su estrato, posteriormente se mide si la cantidad de agua o energía están dentro del rango indicado, si no están dentro del rango, por m^3 de agua adicional se sumarán 400 pesos de más, y por cada KW adicional se sumarás 350 pesos de más. En cuanto al estrato según el valor se le colocará un descuento equivalente al de la tabla.*
+    
+    *Datos de salida: valorTotalAgua, valorTotalEnergia;*
+    
+- **Pseudocódigo**
+
+*Inicio.*
+
+	*Entero consumoAgua, consumoEnergia, estrato;*
+	*Real descuentoAgua, descuentoEnergia;*
+	*Real valorTotalAgua, valorTotalEnergia;*
+	*Real valorInicialAgua = 35000;*
+	*Real valorInicialEnergia = 30000;*
+
+	//Pedir los valores de las entradas por consola
+	*Escriba “Digite la cantidad de agua consumida: “;*
+	*Lea consumoAgua;
+
+	Escriba “Digite el consumo de energía en KW: ”;
+	Lea consumoEnergia;
+
+	Escriba “Digite el estrato al que pertenece: “;
+	Lea estrato;
+
+	//Proceso*
+
+	*//Calculo para el descuento*
+	*Si (estrato >= 1 Y estrato <= 2) Entonces*
+		*descuentoAgua = 0.10;*
+		*descuentoEnergia = 0.15;*
+
+	*Sino Si (estrato >= 3 Y estrato <= 4) Entonces*
+		*descuentoAgua = 0.05;*
+		*descuentoEnergia = 0.10;*
+
+	*Sino Si (estrato >= 5 Y estrato <= 6) Entonces*
+		*descuentoAgua = 0.0;*
+		*descuentoEnergia = 0.05;*
+
+	*Sino*
+		*Escribir "Error: El valor ingresado del estrato no existe.";*
+
+	*FinProceso;*
+
+	*FinSi*3*
+
+	*// Calcular si el consumo es negativo error
+	Si (consumoAgua <= 0) Entonces
+		Escriba "Error: El valor ingresado para el consumo de agua no puede ser 0 o negativo.";
+	FinSi
+
+	*//Calculo para el agua*
+
+	*Si (consumoAgua <= 2000) Entonces*
+		*valorTotalAgua = valorInicialAgua * (1 - descuentoAgua);*
+
+	*Sino*
+		*valorTotalAgua = (valorInicialAgua + ((consumoAgua - 2000) * 400)) * (1 - descuentoAgua);*
+		
+	*FinSi*
+
+	*//Calculo para la energía*
+
+	*Si (consumoEnergia <= 3000) Entonces*
+		*valorTotalEnergia = valorInicialEnergia * (1 - descuentoEnergia);*
+	*Sino*
+		*valorTotalEnergia = (valorInicialEnergia + ((consumoEnergia - 3000) * 350)) * (1 - descuentoEnergia);*
+
+	*FinSi*
+
+	*//Salida por consola*
+	*Escribir "El valor total del consumo del agua es: ", valorTotalAgua;*
+	*Escribir "El valor total del consumo de la energía es: ", valorTotalEnergia;*
+
+*Fin.*
+
+- **Prueba de escritorio**
+
+//Entradas
+*consumoAgua = 2500*
+*consumoEnergia = 3500*
+*estrato = 3*
+
+//Salidas
+*El valor total del consumo del agua es: 223250*
+*El valor total del consumo de la energía es: 184500*
