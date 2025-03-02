@@ -1,0 +1,77 @@
+# 3. Tipo Triangulo
+
+Dada la longitud de tres lados que se ingresan por teclado: L1, L2 y L3, determinar forma o no un triángulo y el tipo. se sabe que:
+
+- Tres lados iguales, triángulo es equilátero.
+- Diferentes, triángulo es escaleno.
+- Dos iguales, triángulo es isósceles.
+
+El primer paso es comprobar si los tres lados forman o no un triángulo, es decir, comprobar que la suma de dos lados cualquiera es mayor al tercer lado.
+
+- **Análisis del Problema**
+
+Datos de entrada: lado1, lado2, lado3;
+
+Proceso: Solicitar los valores de los tres lados al usuario, Validar que los valores sean positivos (lado1, lado2, lado3 > 0), Si alguno es ≤ 0, mostrar error y finalizar, Verificar si los valores cumplen la condición de existencia de un triángulo, Si no se cumple, mostrar error y finalizar. Decir cual es el tipo de triangulo de lo contrario y terminar mostrando el resultado en consola
+
+Datos de salida: tipoTriangulo;
+
+- **Pseudocódigo**
+
+*Inicio
+Entero lado1, lado2, lado3 
+String tipoTriangulo*
+
+*Escriba "Ingrese la longitud del lado 1: "
+Lea lado1
+Escriba "Ingrese la longitud del lado 2: "
+Lealado2
+Escriba "Ingrese la longitud del lado 3: "
+Lealado3
+
+Si lado1 <= 0 O lado2 <= 0 O lado3 <= 0 Entonces
+    Escriba "Error: Los lados deben ser valores positivos."
+    Terminar*
+
+*FinSi
+
+Si (lado1 + lado2 > lado3) Y (lado1 + lado3 > lado2) Y (lado2 + lado3 > lado1) Entonces
+    Si (lado1 = lado2) Y (lado2 = lado3) Entonces
+        tipoTriangulo ← "Equilátero" FinSi
+    Sino Si (lado1 = lado2) O (lado1 = lado3) O (lado2 = lado3) Entonces
+        tipoTriangulo ← "Isósceles" Finsi
+    Sino
+        tipoTriangulo ← "Escaleno"
+
+    Escriba "Los lados ingresados forman un triángulo: ", tipoTriangulo     FinSi
+Sino
+    Escriba "Error: Los valores ingresados no forman un triángulo."
+    Terminar*
+
+*Fin*
+
+- **Prueba de escritorio**
+
+Ingrese la longitud del lado 1: 4
+Ingrese la longitud del lado 2: 4
+Ingrese la longitud del lado 3: 4
+
+Los lados ingresados forman un triángulo Equilátero.
+
+Ingrese la longitud del lado 1: 5
+Ingrese la longitud del lado 2: 5
+Ingrese la longitud del lado 3: 3
+
+Los lados ingresados forman un triángulo Isósceles.
+
+Ingrese la longitud del lado 1: 6
+Ingrese la longitud del lado 2: 5
+Ingrese la longitud del lado 3: 4
+
+Los lados ingresados forman un triángulo Escaleno.
+
+Ingrese la longitud del lado 1: 1
+Ingrese la longitud del lado 2: 2
+Ingrese la longitud del lado 3: 3
+
+Error: Los valores ingresados no forman un triángulo.
