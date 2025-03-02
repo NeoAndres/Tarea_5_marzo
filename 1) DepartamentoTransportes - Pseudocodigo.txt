@@ -1,0 +1,105 @@
+# 1. Departamento de transportes y transito
+
+El Departamento de Transportes y Transito de la ciudad, desea que usted desarrolle un programa que calcule el valor que debe pagar un conductor según el tipo de infracción de la tabla:
+
+| **Infracción** | **Valor Básico**
+**de la  Multa** | **INCREMENTO** |
+| --- | --- | --- |
+| Conducir en estado de embriaguez | ****
+**505.000** | **Grado 1: Grua** |
+|  |  | **Grado 2: 215.000+Grua** |
+|  |  | **Grado 3: 415.000+Grua** |
+| Pico y Placa | ****
+**280.000** | **1ra vez: No Grua** |
+|  |  | **>=2 veces: 102.000+Grua** |
+| Llevar niños menores de diez (10) años en el asiento delantero | ****
+**105.000** | **1 Niño:  45.000**
+**** |
+|  |  | **2      Niños: 70.000** |
+- **Análisis.|**
+
+D. entrada:  tipoInfraccion, gradoInfraccion, cantidadVeces, grua = 100000;
+
+Proceso: se Identifica del tipo de infracción, se calcula el valor de la multa según el tipo de infracción, se tienen en cuenta los errores de digitación del usuario y se muestra el resultado final, que es valor total
+
+D. salida:  valorInfraccion
+
+- **Pseudocódigo.**
+
+*Inicio.*
+
+*Definir tipoInfraccion como CARÁCTER
+Definir gradoInfraccion, cantidadVeces como ENTERO
+Definir valorInfraccion como ENTERO
+Definir grua = 100000*
+
+ *Escriba "Tipos de infracción:"
+Escriba "A: Conducir en embriaguez"
+Escriba "B: Pico y Placa"
+Escriba "C: Llevar niños < 10 adelante"
+
+Lea tipoInfraccion
+
+Si tipoInfraccion = 'A' Entonces
+    valorInfraccion ← 505000
+    Escriba "Conducir en embriaguez"
+    Escriba "Ingrese grado de infracción (1, 2 o 3):"
+    Leer gradoInfraccion
+
+    Si gradoInfraccion = 1 Entonces
+        valorInfraccion += grua;
+    Sino Si gradoInfraccion = 2 Entonces
+        valorInfraccion += 215000 + grua;
+    Sino Si gradoInfraccion = 3 Entonces
+        valorInfraccion += 415000 + grua;
+    Sino
+        Escriba "Grado de infracción no válido."
+    Fin del Si
+
+Sino Si tipoInfraccion = 'B' Entonces
+    valorInfraccion = 280000
+    Escriba "Pico y Placa"
+    Escriba "Ingrese cuántas veces ha cometido la infracción (1 o más):"
+    Lea cantidadVeces*
+
+    *Si cantidadVeces = 1 Entonces
+    valor infraccion
+    Sino Si cantidadVeces > = 2 Entonces*
+
+    valor infraccion+= 102000 + grua;
+
+    Sino 
+
+    Escriba “cantidad de veces no valida”;
+
+*Sino Si tipoInfraccion = 'C' Entonces
+    valorInfraccion =  105000
+    Escriba "Llevar niños en la parte delantera"
+    escriba "Ingrese cuántos niños llevaba (1 o más):"
+    Leer cantidadVeces
+
+    Si cantidadVeces = 1 Entonces
+        valorInfraccion = valorInfraccion + 45000
+    Sino Si cantidadVeces >= 2 Entonces
+        valorInfraccion = valorInfraccion + 70000
+    Fin del Si
+
+Sino
+    Escriba "Tipo de infracción no válido."
+Fin del Si
+
+Escriba "Lo que se debe pagar es: $" valorInfraccion*
+
+*Fin.*
+
+- **Prueba de escritorio**
+    
+    *Tenga en cuenta que tenemos 3 tipos diferentes de infraccion.
+    Cada infraccion será según su clase, de tipo A, B y C.
+    Si la infraccion tiene que ver con Conducir en embriaguez, es de tipo A.
+    Si la infraccion tiene que ver con Pico y placa, es de tipo B.
+    Si la infraccion tiene que ver con llevar ninos < 10 adelante, es de tipo C.
+    Ingrese el tipo de infraccion (A, B o C) = B  /**/ Se digitó la opción B**
+    La persona ha cometido la infraccion: PICO Y PLACA
+    ¿Cuantas veces ha cometido la infraccion? (1 o 2+ veces): 1 **// Se digitó la opción 1**
+    Lo que se debe pagar es: $280000 // Como resultado tenemos lo que se debe pagar*
