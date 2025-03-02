@@ -1,0 +1,131 @@
+# 6. Ejercicio Extra: Metro de Medellín
+
+Haga un programa en c++ que calcule cuanto se debe pagar en 1 año en el metro, teniendo en cuenta que: 
+
+- Ud es un estudiante
+
+- Estudias de Lunes a jueves
+
+- Las clases empiezan el 10 febrero y finalizan el 20 de diciembre
+  (Tenga en cuenta los días festivos) El siguiente código realizado 
+  por chatGPT le proporciona esa información. https://onlinegdb.com/N3J-JbZsc
+  
+- Aquí puede ver la salida por consola de los dias de cada mes desde inicio 
+  de clases hasta final de clases: 'February': 12, 'March': 17, 'April': 18, 'May': 16, 'June': 17, 
+  'July': 19, 'August': 16, 'September': 18, 'October': 18, 'November': 16, 'December': 11}
+  
+- Haga saber cuanto se pagó en total en cada mes a partir de los días que tomo el metro de ida 
+  y vuelta; El pasaje de un usuario frecuente en un día (ida y vuelta) es de 6880, 
+  el de un Adulto mayor de ida y vuelta es de 6120, el de un estudiante es de 2840, el de un discapacitado es de 4960, 
+  como lo puede ver en la gráfica...
+    
+- (Ser estudiante no garantiza tener el descuento de estudiante, por ende, el usuario debe 
+  digitar el tipo de pasaje que suele usar)
+  
+- **Análisis**
+
+  	- Variables de entrada:
+  		- tipo_pasaje (string)
+  	
+    - Proceso
+    	Se solicita al usuario que ingrese el tipo de pasaje, según el tipo de pasaje, se asigna la tarifa correspondiente,
+		se calculan los gastos mensuales multiplicando la tarifa por la cantidad de días de uso del metro en cada mes
+    	se imprime el gasto mensual para cada mes, se calcula el total anual sumando los gastos mensuales y se muestra en pantalla.
+    	
+	- Variables de salida:
+		- costo_mes (int)
+		- total_anual (int)
+		
+- **Pseudocodigo**
+	inicio
+
+    // declaración de variables
+    definir tarifa, total_anual, dias, costo_mes como entero
+    definir tipo_pasaje como cadena
+    
+    // solicitar al usuario el tipo de pasaje
+    escriba "ingrese el tipo de pasaje que usa (frecuente - adulto_mayor - estudiante - discapacitado):"
+    lea tipo_pasaje
+    
+    // asignar tarifa según el tipo de pasaje
+    si tipo_pasaje = "frecuente" entonces
+        tarifa = 6880
+    sino si tipo_pasaje = "adulto_mayor" entonces
+        tarifa = 6120
+    sino si tipo_pasaje = "estudiante" entonces
+        tarifa = 2840
+    sino si tipo_pasaje = "discapacitado" entonces
+        tarifa = 4960
+    sino 
+        escriba "tipo de pasaje no válido, por favor escriba una de las opciones dadas"
+        escriba "(frecuente - adulto_mayor - estudiante - discapacitado)"
+        fin programa //si hay error
+    fin si*4
+    
+    // calcular y mostrar el gasto mensual
+    escriba "gastos mensuales en el metro:"
+
+    dias = 12
+    costo_mes = dias * tarifa
+    escriba "febrero: $", costo_mes
+    
+    dias = 17
+    costo_mes ← dias * tarifa
+    escriba "marzo: $", costo_mes
+    
+    dias = 18
+    costo_mes = dias * tarifa
+    escriba "abril: $", costo_mes
+    
+    dias = 16
+    costo_mes = dias * tarifa
+    escriba "mayo: $", costo_mes
+    
+    dias = 17
+    costo_mes = dias * tarifa
+    escriba "junio: $", costo_mes
+    
+    dias = 19
+    costo_mes = dias * tarifa
+    escriba "julio: $", costo_mes
+    
+    dias = 16
+    costo_mes = dias * tarifa
+    escriba "agosto: $", costo_mes
+    
+    dias = 18
+    costo_mes = dias * tarifa
+    escriba "septiembre: $", costo_mes
+    
+    dias = 18
+    costo_mes = dias * tarifa
+    escriba "octubre: $", costo_mes
+    
+    dias = 16
+    costo_mes = dias * tarifa
+    escriba "noviembre: $", costo_mes
+    
+    dias = 11
+    costo_mes = dias * tarifa
+    escriba "diciembre: $", costo_mes
+
+    // calcular total anual
+    total_anual = (12 + 17 + 18 + 16 + 17 + 19 + 16 + 18 + 18 + 16 + 11 + 18) * tarifa
+
+    // mostrar el total anual
+    escriba "total pagado en el año: $", total_anual
+
+fin
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
